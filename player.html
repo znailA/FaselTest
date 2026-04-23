@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Player</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<style>
+body{margin:0;background:black}
+video,iframe{width:100%;height:100%}
+</style>
+</head>
+
+<body>
+<video id="video" controls autoplay></video>
+
+<script>
+const url = new URLSearchParams(location.search).get("url");
+const video = document.getElementById("video");
+
+if(url.includes("embed")){
+  document.body.innerHTML =
+  `<iframe src="${url}" frameborder="0" allowfullscreen></iframe>`;
+}
+else if(Hls.isSupported() && url.includes("m3u8")){
+  let hls = new Hls();
+  hls.loadSource(url);
+  hls.attachMedia(video);
+}
+else{
+  video.src = url;
+}
+</script>
+</body>
+</html>
