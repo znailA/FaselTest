@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل العمل · FaselHD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="details-page">
+
+<div id="appLoader" class="global-loader"></div>
+
+<!-- زر الرجوع ثابت -->
+<button class="floating-back-btn" onclick="history.back()">← رجوع</button>
+
+<!-- حاوية التفاصيل -->
+<div class="details-container">
+    <div class="backdrop-container">
+        <img id="detailBackdrop" alt="backdrop">
+        <div class="backdrop-shadow"></div>
+    </div>
+    
+    <div class="detail-content">
+        <div class="poster-wrapper">
+            <img id="detailPoster" alt="poster">
+        </div>
+        <div class="meta-info">
+            <h1 id="detailTitle"></h1>
+            <div class="facts">
+                <span id="detailYear"></span>
+                <span id="detailRating">⭐ 0.0</span>
+                <span id="detailDuration"></span>
+            </div>
+            <div class="genres" id="detailGenres"></div>
+            <p id="detailOverview"></p>
+        </div>
+    </div>
+
+    <!-- السيرفرات -->
+    <section class="servers-section">
+        <h3>🎮 سيرفرات المشاهدة</h3>
+        <div id="serversList" class="servers-grid"></div>
+    </section>
+    
+    <!-- حاوية اختيار الجودة (ستظهر ديناميكياً) -->
+    <div id="qualityContainer" class="quality-modal"></div>
+</div>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>

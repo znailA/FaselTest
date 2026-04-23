@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>المشغل · FaselHD</title>
+    <style>
+        /* CSS مخصص للمشغل فقط لضمان الأداء */
+        body { margin:0; background:#000; overflow:hidden; }
+        #videoContainer { width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; }
+        video, iframe { width:100%; height:100%; border:none; object-fit:contain; }
+        /* زر الرجوع في الفيديو */
+        .player-back-btn {
+            position: fixed; top: 20px; left: 20px; z-index: 999;
+            background: rgba(0,0,0,0.6); color: white; border: none;
+            border-radius: 50%; width: 45px; height: 45px; font-size: 24px;
+            backdrop-filter: blur(5px); cursor: pointer; display: flex;
+            align-items: center; justify-content: center; border: 1px solid #444;
+        }
+        .video-error {
+            color: white; text-align: center; padding: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <button class="player-back-btn" onclick="history.back()">←</button>
+    <div id="videoContainer">
+        <video id="mainVideo" controls autoplay playsinline></video>
+    </div>
+    <script src="player.js"></script>
+</body>
+</html>

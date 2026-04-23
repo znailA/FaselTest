@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>FaselHD Pro · الرئيسية</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- خط احترافي للعربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- طبقة التحميل -->
+<div id="appLoader" class="global-loader">🔥 جاري التحميل...</div>
+
+<!-- الشريط العلوي -->
+<header class="app-header">
+    <button class="icon-btn" id="menuToggle" aria-label="القائمة">☰</button>
+    <div class="logo">
+        <span class="logo-icon">🎬</span>
+        <h1>Fasel<span>HD</span></h1>
+    </div>
+    <button class="icon-btn" id="searchToggle" aria-label="بحث">🔍</button>
+</header>
+
+<!-- القائمة الجانبية (مطورة) -->
+<nav id="sideMenu" class="side-menu">
+    <div class="menu-header">
+        <h3>القائمة</h3>
+        <button class="icon-btn" id="closeMenuBtn">✕</button>
+    </div>
+    <a href="/" class="menu-item active">🏠 الرئيسية</a>
+    <a href="#" class="menu-item" id="moviesFilterBtn">🍿 أفلام فقط</a>
+    <a href="#" class="menu-item" id="seriesFilterBtn">📺 مسلسلات فقط</a>
+    <div class="menu-footer">
+        <p>نسخة Pro 2.0</p>
+    </div>
+    <div class="menu-backdrop"></div>
+</nav>
+
+<!-- شريط البحث (مخفي افتراضياً) -->
+<div id="searchOverlay" class="search-overlay">
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="ابحث عن فيلم أو مسلسل..." autocomplete="off">
+        <button class="icon-btn" id="closeSearchBtn">✕</button>
+    </div>
+    <div id="searchResults" class="search-results-grid"></div>
+</div>
+
+<!-- المحتوى الرئيسي -->
+<main id="mainContent" class="main-content">
+    <!-- الهيرو -->
+    <section id="heroSection" class="hero-section">
+        <div class="hero-backdrop"></div>
+        <div class="hero-info">
+            <h2 id="heroTitle"></h2>
+            <p id="heroDesc"></p>
+            <button id="heroWatchBtn" class="watch-btn">▶ مشاهدة</button>
+        </div>
+    </section>
+
+    <!-- الأقسام الديناميكية -->
+    <div id="homeSections"></div>
+</main>
+
+<!-- مكتبة الجلب وفك التشفير -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="app.js" type="module"></script>
+</body>
+</html>
