@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaselHD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div onclick="toggleMenu()">☰</div>
+  <h2>🔥 FaselHD</h2>
+  <div onclick="openSearch()">🔍</div>
+</header>
+
+<div id="menu" class="menu">
+  <a onclick="goHome()">🏠 القائمة الرئيسية</a>
+</div>
+
+<div id="searchBar" class="search-bar">
+  <input id="searchInput" placeholder="ابحث..." />
+  <button onclick="closeSearch()">✖</button>
+</div>
+
+<div id="loader" class="loader hidden"></div>
+
+<div id="hero"></div>
+<div id="home"></div>
+<div id="results" class="grid"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
